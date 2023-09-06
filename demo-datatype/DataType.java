@@ -18,7 +18,8 @@ public class DataType {
     int x = 1;
     int salary = 1000;
     x = 10;
-    System.out.println(x); //10
+    // x = 11;
+    System.out.println("x=" + x); //10
 
     x = x + 2; // always look at the right hand side
     // 10 + 2, assign 12 back to variable x
@@ -28,16 +29,16 @@ public class DataType {
     System.out.println(x); // 4 (12 - 8)
 
     salary = salary + x; 
-    System.out.println(salary); // 1004
+    System.out.println("salary =" + salary); // 1004
 
     int z = salary / 2; 
-    System.out.println(z); //502
+    System.out.println("z=" + z); //502
 
     int k = z * 5;
-    System.out.println(k); // 2510
+    System.out.println("k=" + k); // 2510
 
     int sum = x + salary + z + k; // 4020
-    System.out.println(sum); 
+    System.out.println("sum =" + sum); 
 
     int result = sum + 10 / 2; 
     System.out.println(result); // 4025
@@ -46,10 +47,10 @@ public class DataType {
   // self + 1 
     int j = 0; 
     j = j + 1; // Approach 1
-    j += 1 ; // Approach 2: same as j = j + 1, "= j +" -> "+=" 
-    j++; // Approach 3
-    ++j; // Approach 4 
-    System.out.println(j); //4
+     j += 1 ; // Approach 2: same as j = j + 1, "= j +" -> "+=" 
+     j++; // Approach 3
+     ++j; // Approach 4 
+    System.out.println("check++ " + j); //4
 
     // String str = 1; // Not OK, cannot assign int to String variable
     String s = "hello";
@@ -67,14 +68,14 @@ public class DataType {
 
     //int -> Integer 整數
     // int a = 0.3; // cannot assign decimal to int variable
-    double d = 0.3;
-    d = 3.1415; 
-    System.out.println(d); // 3.1415
+    double d = 0.31;
+     d = 3.1415; 
+    System.out.println("d=" + d); // 3.1415
     d = d + 0.3 - 0.1 * 2; 
-    System.out.println(d); // 3.2415
+    System.out.println("d=" + d); // 3.2415
 
     double d2 = 3; // assign int to variable d2, then convert int to
-    System.out.println(d2); //3.0
+    System.out.println("d2=" + d2); //3.0
 
     // boolean (true OR false)
     boolean a = true; 
@@ -84,6 +85,7 @@ public class DataType {
     // String W = true; // cannot assign true/false to String variable 
     // boolean dont support +/-/*// operation
     boolean isMale = true; 
+    System.out.println("isMale=" + isMale); // true
 
     // char 
     char t = 'a' ;
@@ -97,7 +99,8 @@ public class DataType {
     byte b = 1; // Within -128 to 127
     // byte b = -129; // out of range
     // byte b = 128; // out of range
-    // b = b + 10; // byte will convert to int 
+    // b = b + 10;  // byte will convert to int 
+    System.out.println("b=" + b); //1 
 
     // short 
     short sh = 128; 
@@ -131,13 +134,13 @@ public class DataType {
     double d5 = 3.0d; // Explicityly assign a double value
     // float f = 3.0; // NOT OK , assign double value to float value
     float f = 3.0f; 
-
+System.out.println("float=" + f);
     // byte, short, int, long -> all of them handle integer
     byte b3 = 3;
     short s3 = 4;
     int i3 = 5; // default int value
     long l4 = 5; // (upcast), you can ignore today
-    long l3 = 5L; // Assign long value 5 to a long variable, L 要大寫
-    
+    long l3 = 5L; // Assign long value 5 to a long variable, 要放 大L，L要大寫
+
   }
 }
