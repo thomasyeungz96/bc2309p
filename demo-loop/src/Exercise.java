@@ -35,16 +35,16 @@ for (int i = 1; i <= 1000; i++){ // 1, 2, ....1000
     if (i % 2 ==0){
       s += i; 
     }
-  } else if (i < 700) {
-     if (i % 2 !=0) {
-      s += i;
-     }
-  } else {
+   } else if (i < 700) {
+      if (i % 2 !=0) {
+       s += i;
+      }
+    } else {
       if (i % 3 == 0) {
-        s += i;
+       s += i;
       }
   }
 }
-System.out.println(s);
+System.out.println("s=" + s);
   }
 }
