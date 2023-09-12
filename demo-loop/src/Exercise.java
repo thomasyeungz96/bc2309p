@@ -6,10 +6,12 @@ public class Exercise {
 
 int sum = 0;
 for (int i = 1; i < 11; i++) {
+  System.out.println("i=" + i); 
 // sum = sum + i; 
 sum += i;
+System.out.println("sum=" + sum);
 } 
-System.out.println(sum); //55 
+System.out.println("sum=" + sum); //55 
 
 
  // sum of 2,4,6,8,10
@@ -18,11 +20,13 @@ System.out.println(sum); //55
 
 int total = 0;
 for (int i = 1; i < 11; i++) {
-  if (i % 2 == 0 ){
+  if (i % 2 == 0 ){ 
       total += i;
+      System.out.println("i="+ i);
+      System.out.println("total=" +total); 
   }
 }
-  System.out.println(total); // 30 
+  System.out.println("total=" +total); // 30 
 
 // 1 - 1000
 // 1 - 299 (add all even number)
