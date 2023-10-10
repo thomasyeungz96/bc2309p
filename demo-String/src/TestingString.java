@@ -37,7 +37,7 @@ public class TestingString {
       }
 
       float f1 = 100.3f;
-      long l1 = 2200000000L;  //  加L 要java 唔好理咁多 當long varible 
+      long l1 = 2200000000L;  //  加L 要java 唔好理咁多 當long varible "l" 細階都得，但難睇
       double d1 = 1.0; // 1.0d
       byte b1 = 127; 
       

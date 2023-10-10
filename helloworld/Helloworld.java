@@ -6,6 +6,8 @@ public class Helloworld {
     // tool: System.out.println
     System.out.println("Hello World !!!! 你好！");
     System.out.println("中文字");
+
+    
     } 
 }
 // this is the end of file  

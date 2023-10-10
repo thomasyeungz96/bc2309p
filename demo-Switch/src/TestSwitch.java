@@ -4,7 +4,7 @@ public class TestSwitch {
     char grade = ' '; 
     // check if score match anyone of the folling cases
     switch(score) { 
-      case 90: // 1, match
+      case 90: // 1, match case 無得大過 細過 要指定
         grade = 'A'; // 2, execute
         break;
         // System.out.println("case 90");

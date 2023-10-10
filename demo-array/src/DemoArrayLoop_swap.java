@@ -1,4 +1,4 @@
-public class DemoArrayLoop {
+public class DemoArrayLoop_swap {
   public static void main (String[] args) {
 
     int [] nums = new int[4];
@@ -89,14 +89,13 @@ for (int i = 0; i < nums.length; i++){
 
   for (int i =0; i <  characters.length; i++) {
     System.out.println("after_letter=" + String.valueOf(characters[i]));
-
       str2 += characters[i]; 
- 
       System.out.println("str2_per_line=" + str2);
     }
     System.out.println("String.valueOf()= " + String.valueOf(characters)); // char[] -> String
     System.out.println("str2=" + str2);
   }
+}
 }
 
       // String u = String.valueOf(1); // 1 ->"1" 將 1 變左做String 

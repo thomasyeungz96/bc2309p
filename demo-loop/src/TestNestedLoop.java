@@ -27,13 +27,14 @@ public class TestNestedLoop {
     // Print the statement, when i & j are both even number
     // One more condition: j < 15
     for (int i = 1; i <= 10; i++){ // outer loop
+
       for (int j=11; j <= 20; j++) { // inner loop
         if (j >= 15) {
           break; // break the inner loop 所以行得較快
         }
-            if ( i % 2 ==0 && j % 2 ==0 ) {
+            if ( i % 2 == 0 && j % 2 ==0 )
         System.out.println("i2=" + i + ",j2=" + j);
-      }
+      
     }
  }
 

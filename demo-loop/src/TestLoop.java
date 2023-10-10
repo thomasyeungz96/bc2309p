@@ -30,9 +30,24 @@ public class TestLoop {
     x = 2;
     for (int i = 0; i < 7; i++) { // 0 當第一次，i++, i+=1, i = i + 1
       x = x * 2;
-      System.out.println(x); // print 7 times
+      System.out.println("x=" +x ); // print 7 times
     }
     System.out.println(x); // 256
+    
+
+    // for (byte  b =0; b < 128; b++){ // infinite loop 
+    //   System.out.println(b); // 0....127 
+    //   // when b =127 -> b++ -> -128 -> -128 < 128 than b++
+    // }
+
+      for (byte b =0; b >=0; b++)
+        System.out.println("b=" + b);
+        // when b = 127 -> b++ -> -128 -> -128 >=0 -> false 
+
+
+
+
+
   }
   
 }
