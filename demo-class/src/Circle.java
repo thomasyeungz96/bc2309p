@@ -1,31 +1,30 @@
 import java.math.BigDecimal;
 
 public class Circle {
+  // area
+  // radius * radius * pi (3.14)
+  // Math.PI
 
   double radius;
-  String color;
 
-  // constructor
+  String color; // enum
+
   public Circle() {
 
   }
-//allargconstructor
-  public Circle(double radius, String color) {
+
+  public Circle(double radius, String color) { //
     this.radius = radius;
-    this.color = color;
+    this.color = color; // 
   }
-
-  //setter
-  public void setColor(String color) {
-    this.color = color;
-  }
-
 
   public void setRadius(double radius) {
     this.radius = radius;
   }
 
-  //getter
+  public void setColor(String color) {
+    this.color = color;
+  }
 
   public double area() {
     // BigDecimal
@@ -35,19 +34,16 @@ public class Circle {
   }
 
   public static void main(String[] args) {
-
-    Circle circle1 = new Circle(1.0, "RED");
-    System.out.println(circle1.area());
+    // new Circle
+    Circle circle = new Circle(1.0, "RED");
+    System.out.println(circle.area()); // 3.141592653589793
 
     Circle circle2 = new Circle();
     circle2.setRadius(1.0);
     circle2.setColor("YELLOW");
-    System.out.println(circle2.area());
-    circle2.setRadius(3.0);
-    System.out.println(circle2.area());
-    
+    System.out.println(circle2.area()); // 3.141592653589793
+    circle2.setRadius(3.3);
+    System.out.println(circle2.area()); // 34.21194399759285
   }
-
-
 
 }

@@ -2,7 +2,7 @@ public class Person {
 
   int age;
 
-  String gender; // 'M' or 'F'
+  char gender; // 'M' or 'F'
 
   String firstName;
 
@@ -10,49 +10,27 @@ public class Person {
 
   int hkid;
 
-  public void setAge(int age) { // no static here
+  public void setAge(int age) {
     this.age = age;
   }
 
-  public int getAge() {
-    return this.age;
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
   }
 
-  public void setGender(String gender) {
+  public void setGender(char gender) {
     this.gender = gender;
   }
 
-  public String getGender() {
-    return this.gender;
-  }
-
-  public void setFirstname(String fristname) {
-    this.firstName = fristname;
-  }
-
-  public String getFirstname() {
-    return this.firstName;
-  }
-
-  public void setLastname(String lastname) {
-    this.lastName = lastname;
-  }
-
-  public String getLastname() {
-    return this.lastName;
-  }
-
-  public String fullname() {
+  public String fullName() {
     return this.firstName + " " + this.lastName;
   }
 
   public boolean isMale() {
-    if (this.gender.equals("M"))// 'M' is char , String 用.equals
+    if (this.gender == 'M')
       return true;
     return false;
   }
-
-
 
   public boolean isElderly() {
     if (this.age > 65)
@@ -60,22 +38,32 @@ public class Person {
     return false;
   }
 
+  public static String print() {
+    return "hello";
+  }
+
   public static void main(String[] args) {
+    Book book1 = new Book(); // book1 is an object
+    book1.setAuthor("John");
+    book1.setNoOfPages(3);
+    System.out.println(book1.getAuthor()); // John
+    System.out.println(book1.getNoOfPages()); // 3
+    Book book2 = new Book(); // book2 is another object
+    System.out.println(book2.getAuthor()); // null
+    System.out.println(book2.getNoOfPages()); // 0
 
-    Person person2 = new Person();
-    person2.setAge(65);
-    person2.setGender("M");
-    person2.setFirstname("Thoams");
-    person2.setLastname("Yeung");
-    System.out.println(person2.isElderly()); // false
+    Person person = new Person();
+    person.setAge(66);
+    person.setGender('F');
+    System.out.println(person.isElderly()); // true
 
-    System.out.println(person2.getGender());
-    System.out.println(person2.getFirstname());
-    System.out.println(person2.getLastname());
-
-    if (person2.isElderly() && !person2.isMale()) {
+    if (person.isElderly() && !person.isMale()) {
       System.out.println("this is female erderly");
     }
+
+    System.out.println(book1.toString()); // author=John, noOfPages=3
+
+    Person.print();
+    Book.print();
   }
 }
-

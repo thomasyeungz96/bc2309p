@@ -1,31 +1,27 @@
 public class Inventory {
-
-  // Stock stock;
+  // attribute, instance variable
+  // primitives, wrapper class, String
   Stock[] stocks;
+
   static String location = "TST";
 
-  // constructor with stock parameter
-  public Inventory(Stock inStock) {
-    // this.location = inlocation;
+  // Constructor signature 1 (with Stock parameter)
+  public Inventory(Stock stock) {
     this.stocks = new Stock[100];
-    this.stocks[0] = inStock;
+    this.stocks[0] = stock;
+    // this.location = location;
   }
 
-  // constructor no parameter
+  // Constructor signature 2 (no parameter)
   public Inventory() {
     this.stocks = new Stock[100];
   }
 
-
-
-  // public void setLocation(String inlocation) {
-  //   this.location = inlocation;
+  // public void setLocation(String location) {
+  //   this.location = location;
   // }
 
-  public String getLocation() {
-    return this.location;
-  }
-
+  // method: return no of stock in the stock array
   public int size() {
     int count = 0;
     for (int i = 0; i < this.stocks.length; i++) {
@@ -35,63 +31,41 @@ public class Inventory {
     return count;
   }
 
-  public void add(Stock inStock) {
+  public void add(Stock stock) {
     for (int i = 0; i < this.stocks.length; i++) {
       if (stocks[i] == null) {
-        stocks[i] = inStock;
+        stocks[i] = stock;
         break;
       }
     }
   }
 
+  // getStock
   public Stock[] getStocks() {
     return this.stocks;
   }
 
   public static void main(String[] args) {
+    // new a Stock with price
+    Stock stock = new Stock(99.9d);
+    // new a Inventory
+    Inventory inventory = new Inventory(); // empty constructor
+    // how to set stock into an inventory
+    inventory.add(stock);
+    inventory.add(stock);
+    System.out.println(inventory.size()); // 2
 
-    // new a Stock;
-    // new a Inventory;
-    // how to set stock into inventory;
-
-    Stock stock1 = new Stock(0);
-    stock1.setPrice(119.19);
-    System.out.println("stock1.price=" + stock1.price);
-    stock1.setRank("AAA");
-    System.out.println("stock1.rank=" + stock1.rank);
-
-    Stock stock2 = new Stock();
-    stock2.setPrice(288);
-    System.out.println(stock2.price);
-
-    Stock stock3 = new Stock();
-    stock3.setPrice(388);
-    System.out.println(stock3.price);
-
-    Inventory inventory1 = new Inventory();
-    inventory1.add(stock1);
-    inventory1.add(stock2);
-    inventory1.add(stock3);
-    int size = inventory1.size();
-    System.out.println("size=" + size);
-
-
-
-    // System.out.println(
-    // "inventory1.getStock().getPrice()=" + inventory1.getStock().getPrice());
-
-    // System.out.println("inventory1=" + inventory1.stock.price);
-    // System.out.println("inventory1=" + inventory1.stock.rank);
-
-    // for (Stock s: inventory1.getStocks()){
-    // }
-    for (int i = 0; i < inventory1.getStocks().length; i++) {
-      Stock s = inventory1.getStocks()[i];
+    // how to print the price of the stock inside the inventory object
+    // chain method
+    // System.out.println(inventory.getStock().getPrice()); // 99.9
+    for (int i = 0; i < inventory.getStocks().length; i++) {
+      Stock s = inventory.getStocks()[i];
       if (s != null) {
-        System.out.println(
-            "Stock " + i + ", rank= " + inventory1.getStocks()[i].getRank());
+        System.out.println("Stock " + i + ", price=" + s.getPrice());
       }
     }
-      System.out.println(Inventory.location);
+    
+    System.out.println(Inventory.location); // TST
   }
+
 }

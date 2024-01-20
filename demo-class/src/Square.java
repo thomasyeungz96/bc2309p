@@ -1,19 +1,20 @@
 public class Square {
 
   int length;
-  int weight;
 
   // constructor
-  public Square() {}
+  public Square() {
 
-  // All arguments constructor (arguments -> parameters)
-  public Square(int inlength) {
-    this.length = inlength;
   }
 
-  // setter for post editing
-  public void setLength(int inlenght) {
-    this.length = inlenght;
+  // All-arguements constructor (arguments -> parameters)
+  public Square(int length) {
+    this.length = length;
+  }
+
+  // setter
+  public void setLength(int length) {
+    this.length = length;
   }
 
   // area
@@ -21,49 +22,51 @@ public class Square {
     return this.length * this.length;
   }
 
-  public void abc() {
-    System.out.println("hello. This is abc method");
-  }
-
-  // static method = tools
   public static int area(int length) {
-    return length * length;
+    return length * length; // int * int -> int
   }
 
-  // method signaure = method name + parameters. only one
-  public static void abc(String inString){
-    System.out.println("this is static method for printing "+ inString);
-  }
-  public static void abc(String inString, String inString2){
-    System.out.println("this is static method for printing "+ inString+" "+inString2);
+  public void abc() {
+    System.out.println("hello. this is abc method.");
   }
 
+  // method signature cannot be duplicated
+  // method signature = method name + parameters
+  public static void abc(String s) {
+    System.out.println("hello. this is static abc method. " + s);
+  }
+
+  public static String abc(String s, String s2) {
+    System.out.println("hello. this is static abc method. " + s + s2);
+    return s + s2;
+  }
 
   public static void main(String[] args) {
-
     // new Square
     // Approach 1:
-    Square square1 = new Square(); // empty constructor
-    square1.setLength(3); // assign
-    System.out.println(square1.length);
-    System.out.println(square1.area());// 9
+    Square square = new Square(); // empty constructor
+    square.setLength(3); // assign length into the square object
+    System.out.println(square.area()); // 9
 
     // Approach 2:
-    Square square2 = new Square(3); // second constructor
-    System.out.println(square2.length);
-    System.out.println(square2.area());// 9
-    System.out.println("Square.area()" + Square.area(3));// 9
+    Square square2 = new Square(3);
+    System.out.println(square2.area()); // 9
+
+    // Approach 3:
+    // static method call
+    System.out.println(Square.area(3)); // 9
 
     // revise square2 length -> 7
     square2.setLength(7);
-    System.out.println("square2.length=" + square2.area()); // 49
+    System.out.println(square2.area()); // 49
 
+    // difference between instance method and static method
+    // Instance method: new object first -> use the instance variables to calculate
+    // static method: in and out (no object)
 
-    square1.abc();
-    square2.abc();
+    square.abc(); // print
+    square2.abc(); // print
 
-    Square.abc("testing");
-    Square.abc("testing 2");
   }
 
 }

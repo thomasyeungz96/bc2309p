@@ -15,17 +15,16 @@ public class Subject {
     return this.description;
   }
 
-  public char getGrade(){
-
+  public char getGrade() {
     if (this.score >= 90)
       return 'A';
-      else if (this.score >= 80)
+    else if (this.score >= 80)
       return 'B';
-      else if (this.score >= 70)
+    else if (this.score >= 70)
       return 'C';
-      else if (this.score >= 60)
+    else if (this.score >= 60)
       return 'D';
-      else 
+    else
       return 'F';
   }
 
@@ -40,23 +39,15 @@ public class Subject {
     Subject s3 = new Subject("Maths", 30);
     Exam exam = new Exam(s1);
     exam.add(s2);
-    exam.delete(s2);
+    exam.delete(new Subject("History", 0));
     exam.add(s3);
-    System.out.println("getNoofDayOfweek="+exam.getNoOfDayOfweek());
-
     double averageScore = exam.average();
     System.out.println("averageScore=" + averageScore);
-
-
-    System.out.println("s3=" + s3);
 
     // private static variable
     // so, we cannot get the static variable directly
     System.out.println(Exam.getSize());
     // Exam.noOfdayOfAWeek = 23;
-    // Exam.size = 10;
   }
 
 }
-
-

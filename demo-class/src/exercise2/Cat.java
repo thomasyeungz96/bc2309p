@@ -1,13 +1,14 @@
 package exercise2;
 
- class Cat { // package-private
+class Cat { // package-private (default)
 
   String name;
 
-   Cat(){
+  Cat() {
 
   }
-  void print(){
+
+  void print() {
 
   }
 

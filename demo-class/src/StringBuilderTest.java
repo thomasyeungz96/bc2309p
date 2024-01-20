@@ -1,55 +1,36 @@
 public class StringBuilderTest {
-
   public static void main(String[] args) {
-
     StringBuilder s = new StringBuilder(); // constructor
-
-    s.append("hello"); // stringBuilder is obj ref. apped is instance method
-    // apend is a mehtod
+    s.append("hello"); // stringBuilder is obj ref
+    // append() is a method
     s.append("world");
     System.out.println(s.toString()); // helloworld
 
-
-    s.append(" ").append("something").toString();
-    s.append(" ").append("something").toString();
-
-    System.out.println(s.append(" ").append("something").toString());// hellowworld something
-    System.out.println(s.toString());// hellowworld something
-    System.out.println(s.append(" ").append("something").toString());// hellowworld something
+    System.out.println(s.append(" ").append("something").toString()); // helloworld something
+    System.out.println(s.toString()); // helloworld something
+    System.out.println(s.append(" ").append("something").toString()); // helloworld something something
 
     // 1 - 10, even number, by using StringBuilder
-
-    String s3 = "";
+    // result -> "246810"
+    StringBuilder s2 = new StringBuilder();
     for (int i = 1; i <= 10; i++) {
       if (i % 2 == 0)
-        s3 += String.valueOf(i);
-    }
-    System.out.println("s3=" + s3);//
-
-    // StringBuilder is faster than the String +=
-    // method 2
-
-    StringBuilder s2 = new StringBuilder(); // constructor
-
-    for (int i = 1; i <= 10; i++) {
-      if (i % 2 == 0) {
         s2.append(i);
+    }
+    System.out.println(s2.toString()); // 246810
+
+    StringBuilder sb = new StringBuilder("Hello, World!");
+
+    // Removing specific characters from the StringBuilder
+    for (int i = 0; i < sb.length(); i++) {
+      char c = sb.charAt(i);
+      if (!Character.isLetter(c) && !Character.isWhitespace(c)) {
+        sb.deleteCharAt(i);
+        i--; // Adjust the index after deletion
       }
     }
 
-    System.out.println(s2.toString());
-    s2.reverse();
-    System.out.println(s2);
-
-    
-
-
-
-
-
-    
-
-
-
+    String result = sb.toString();
+    System.out.println(result); // Output: HelloWorld
   }
 }
